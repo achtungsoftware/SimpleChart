@@ -15,9 +15,19 @@
 //  GitHub https://github.com/knoggl/SimpleChart
 //
 
-public struct SimpleChart {
-    public private(set) var text = "Hello, World!"
+import Foundation
 
-    public init() {
+internal extension Array where Element == ChartData {
+    /// Returns the biggest value in array
+    var max: Double {
+        var allValues: [Double]    {
+            var values = [Double]()
+            for _data in self {
+                values.append(_data.value)
+            }
+            return values
+        }
+        
+        return allValues.max() ?? 0
     }
 }

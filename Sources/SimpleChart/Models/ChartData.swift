@@ -15,9 +15,11 @@
 //  GitHub https://github.com/knoggl/SimpleChart
 //
 
-public struct SimpleChart {
-    public private(set) var text = "Hello, World!"
+import SwiftUI
 
-    public init() {
-    }
+struct ChartData: Identifiable {
+    let id: UUID = UUID()
+    var label: String
+    var value: Double
+    var overrideColor: Color = .clear
 }
