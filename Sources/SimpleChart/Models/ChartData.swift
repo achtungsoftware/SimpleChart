@@ -19,10 +19,15 @@ import SwiftUI
 
 public struct ChartData: Identifiable {
     
-    public init() {}
-    
-    public let id: UUID = UUID()
+    public let id: UUID
     public var label: String
     public var value: Double
-    public var overrideColor: Color = .clear
+    public var overrideColor: Color
+    
+    public init(id: UUID = UUID(), label: String, value: Double, overrideColor: Color = .clear) {
+        self.id = id
+        self.label = label
+        self.value = value
+        self.overrideColor = overrideColor
+    }
 }
