@@ -2,6 +2,12 @@
 
 SimpleChart currently only supports bar charts.
 
+# Swift Package Manager
+Get this package with the Swift Package Manager
+```swift
+.package(url: "https://github.com/knoggl/SimpleChart.git", .upToNextMinor(from: "1.0.0")),
+```
+
 # Example
 ```swift
 struct ContentView: View {
