@@ -102,3 +102,42 @@ public struct Chart: View {
         .font(.caption2)
     }
 }
+
+struct Chart_Previews: PreviewProvider {
+    static var previews: some View {
+        ScrollView {
+            VStack(spacing: 16) {
+                Chart([
+                    ChartData(label: "Mon", value: 300.34),
+                    ChartData(label: "Tue", value: 93),
+                    ChartData(label: "Wed", value: 634),
+                    ChartData(label: "Thu", value: -82.1),
+                    ChartData(label: "Fri", value: 380),
+                    ChartData(label: "Sat", value: 222),
+                    ChartData(label: "Sun", value: 132)
+                ])
+                
+                Chart([
+                    ChartData(label: "Mon", value: 300.34),
+                    ChartData(label: "Tue", value: 93),
+                    ChartData(label: "Wed", value: 634),
+                    ChartData(label: "Thu", value: -82.1),
+                    ChartData(label: "Fri", value: 380),
+                    ChartData(label: "Sat", value: 222),
+                    ChartData(label: "Sun", value: 132, overrideColor: .blue)
+                ], height: 120, color: .cyan, showBorderLines: false)
+                
+                Chart([
+                    ChartData(label: "Mon", value: 300.34, overrideColor: .cyan),
+                    ChartData(label: "Tue", value: 93, overrideColor: .secondary),
+                    ChartData(label: "Wed", value: 634, overrideColor: .red),
+                    ChartData(label: "Thu", value: -82.1),
+                    ChartData(label: "Fri", value: 380, overrideColor: .pink),
+                    ChartData(label: "Sat", value: 222, overrideColor: .gray),
+                    ChartData(label: "Sun", value: 132, overrideColor: .mint)
+                ], type: .bar(2, withSidebar: false), showBorderLines: false)
+            }
+            .padding()
+        }
+    }
+}
