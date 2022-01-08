@@ -18,6 +18,9 @@
 import SwiftUI
 
 public struct ChartData: Identifiable {
+    
+    public init() {}
+    
     public let id: UUID = UUID()
     public var label: String
     public var value: Double
