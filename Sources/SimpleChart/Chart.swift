@@ -18,6 +18,7 @@
 import SwiftUI
 import SwiftPlus
 
+/// Returns a Chart View
 public struct Chart: View {
     
     public enum ChartType {
@@ -32,6 +33,14 @@ public struct Chart: View {
     var backgroundColor: Color
     var showBorderLines: Bool
     
+    /// - Parameters:
+    ///   - data: The `ChartData` array
+    ///   - type: The `ChartType`, default is `.bar()`
+    ///   - height: The chart height, default is `250`
+    ///   - color: The representation color, default is `.green`
+    ///   - showValue: Should the value be shown?, default is `true`
+    ///   - backgroundColor: The backgroundColor for the unfilled area, default is `.gray.opacity(0.14)`
+    ///   - showBorderLines: Should the top and bottom line indicator be shown?, default is `true`
     public init(_ data: Array<ChartData>,
          type: ChartType = .bar(),
          height: Double = 250,
