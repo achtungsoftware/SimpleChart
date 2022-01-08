@@ -18,9 +18,9 @@
 import SwiftUI
 import SwiftPlus
 
-struct Chart: View {
+public struct Chart: View {
     
-    enum ChartType {
+    public enum ChartType {
         case bar(_ spacing: Double = 8, withSidebar: Bool = true)
     }
     
@@ -32,7 +32,7 @@ struct Chart: View {
     var backgroundColor: Color
     var showBorderLines: Bool
     
-    init(_ data: Array<ChartData>,
+    public init(_ data: Array<ChartData>,
          type: ChartType = .bar(),
          height: Double = 250,
          color: Color = .green,
@@ -49,7 +49,7 @@ struct Chart: View {
         self.showBorderLines = showBorderLines
     }
     
-    var body: some View {
+    public var body: some View {
         VStack {
             switch type {
             case .bar(let spacing, let withSidebar):
@@ -59,7 +59,7 @@ struct Chart: View {
         .frame(height: height)
     }
     
-    func barChart(_ spacing: Double, withSidebar: Bool) -> some View {
+    private func barChart(_ spacing: Double, withSidebar: Bool) -> some View {
         VStack(spacing: 0) {
             if showBorderLines {
                 Divider()
